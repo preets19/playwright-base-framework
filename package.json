@@ -1,0 +1,40 @@
+{
+  "name": "@your-org/playwright-base-framework",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "build": "npx tsc",
+    "clean": "node ./scripts/clean.mjs",
+    "pack:local": "npm run validate && npm pack",
+    "security:audit": "npm audit --audit-level=moderate",
+    "validate": "npm run clean && npm run typecheck && npm run build"
+  },
+  "files": [
+    "dist",
+    "src",
+    "README.md",
+    "package.json"
+  ],
+  "devDependencies": {
+    "@playwright/test": "^1.60.0",
+    "@types/node": "22.7.5",
+    "typescript": "^5.9.3"
+  },
+  "peerDependencies": {
+    "@playwright/test": "^1.60.0"
+  },
+  "optionalDependencies": {
+    "mssql": "11.0.1",
+    "mysql2": "3.11.3",
+    "pg": "8.13.0"
+  }
+}

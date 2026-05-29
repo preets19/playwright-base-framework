@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.tmp/
+.npm-cache/
+*.tgz
+.env
+auth.json
+*.auth.json
