@@ -1,10 +1,11 @@
 # Split Project Structure
 
-The active automation work is split into two independent local Git repositories:
+The active automation work is split into three independent local Git repositories:
 
 ```text
 ../playwright-base-framework/
-../app/
+../playwright-app-template/ or ../app-automation-repo/
+../playwright-automation-dashboard/
 ```
 
 ## playwright-base-framework
@@ -34,7 +35,7 @@ It owns:
 - `_automation/tests`
 - `_automation/test-data`
 - `appsettings.json`
-- local dashboard and Windows launchers
+- app-specific Playwright config and package dependency on the framework
 
 During local development, `app` consumes the framework through a generated local tarball:
 
@@ -42,20 +43,33 @@ During local development, `app` consumes the framework through a generated local
 "@your-org/playwright-base-framework": "file:../playwright-base-framework/your-org-playwright-base-framework-1.0.0.tgz"
 ```
 
-`Setup Automation.cmd` in the app folder builds and packs the framework before installing app dependencies.
+Dashboard Home in `playwright-automation-dashboard` can run setup against a loaded app repo. During local phased development, setup builds and packs the sibling framework before installing app dependencies.
 
 When the projects are pushed to GitHub or a package registry, replace the local tarball dependency with the approved remote package dependency.
 
+## playwright-automation-dashboard
+
+QA-facing dashboard and local Windows command tooling.
+
+It owns:
+
+- `Start Automation Dashboard.cmd`
+- Dashboard Home
+- copied Test Dashboard
+- Windows setup, framework update, Git status, and stop command wrappers
+- handoff between Dashboard Home and Test Dashboard
+
+It does not own app page objects, app tests, or framework source code.
+
 ## Local QA Workflow After Split
 
-From `app/`:
+From `playwright-automation-dashboard/`:
 
 ```text
-Setup Automation.cmd
 Start Automation Dashboard.cmd
-Update Framework.cmd
-Stop Automation.cmd
 ```
+
+Then use Dashboard Home to discover and load an app automation repo. Use `Setup Automation`, `Open Test Dashboard`, `Check Git Status`, or `Update Framework` from there.
 
 Framework owners work in `playwright-base-framework/` and run:
 

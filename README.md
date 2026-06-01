@@ -4,6 +4,8 @@ Reusable Playwright TypeScript automation framework.
 
 This repo is intended to be maintained by the automation/framework team and consumed by independent app automation repos.
 
+Dashboard and local QA command tooling live in the sibling `playwright-automation-dashboard` repo. App automation repos consume this framework package; they should not own shared dashboard behavior.
+
 ## Where To Work
 
 Framework source code lives in `src/`. Most framework changes should happen there, with supporting documentation in `docs/` when behavior or usage changes.
