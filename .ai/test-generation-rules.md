@@ -43,6 +43,12 @@ Prefer reuse over creation.
 
 Before proposing a new artifact, inspect the existing app automation structure for matching or reusable pages, workflows, models, and test data.
 
+Check for both full and partial matches.
+
+If an existing workflow, page, model, test-data file, or test partially maps to the requested scenario, prefer reuse, composition, or a focused update when that keeps ownership clear and avoids mixing unrelated behavior.
+
+Clearly explain why each new artifact is needed instead of reusing or extending an existing one.
+
 Recorder output is an input signal, not the final implementation style.
 
 The generated test should be concise and written at the user-intent level. Move low-level interactions into page objects and multi-step user journeys into workflows.
