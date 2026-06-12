@@ -1,0 +1,68 @@
+{
+  "id": "",
+  "date": "",
+  "promptVersion": "",
+  "source": {
+    "rawRecorderCode": "",
+    "userIntent": "",
+    "appRepoPath": "",
+    "frameworkPackageVersion": ""
+  },
+  "generatedOutput": {
+    "summary": "",
+    "models": {
+      "reused": [],
+      "created": [],
+      "updated": []
+    },
+    "pages": {
+      "reused": [],
+      "created": [],
+      "updated": []
+    },
+    "testData": {
+      "reused": [],
+      "created": [],
+      "updated": []
+    },
+    "workflows": {
+      "reused": [],
+      "created": [],
+      "updated": []
+    },
+    "tests": {
+      "created": [],
+      "updated": []
+    },
+    "assumptions": [],
+    "confidence": ""
+  },
+  "finalAcceptedOutput": {
+    "summary": "",
+    "filesCreated": [],
+    "filesUpdated": [],
+    "testsPassed": null
+  },
+  "humanRefinements": [
+    {
+      "category": "",
+      "description": "",
+      "example": ""
+    }
+  ],
+  "comparison": {
+    "whatWorkedWell": [],
+    "whatWasMissing": [],
+    "whatWasIncorrect": [],
+    "whatWasOverCreated": [],
+    "whatShouldHaveBeenReused": [],
+    "whatShouldHaveBeenGeneralized": []
+  },
+  "lessons": {
+    "promptRuleCandidates": [],
+    "exampleCandidates": [],
+    "mcpContextCandidates": [],
+    "antiPatternsToAvoid": []
+  },
+  "nextPromptChanges": []
+}
