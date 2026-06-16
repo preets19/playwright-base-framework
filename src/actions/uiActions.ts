@@ -1,27 +1,41 @@
 import type { Locator, Page } from '@playwright/test';
+import type { UiWaitSettings } from '../config/testSettings.js';
+import { DEFAULT_UI_TIMEOUT_MS, Waits, type WaitOptions } from '../core/waits.js';
 
 export class UiActions {
-  constructor(private readonly page: Page) {}
+  private readonly waits: Waits;
+
+  constructor(
+    private readonly page: Page,
+    private readonly waitSettings: UiWaitSettings = {}
+  ) {
+    this.waits = new Waits(page, waitSettings);
+  }
 
   async goto(url: string): Promise<void> {
     await this.page.goto(url);
   }
 
-  async click(locator: Locator): Promise<void> {
-    await locator.click();
+  async click(locator: Locator, options: WaitOptions = {}): Promise<void> {
+    await this.waits.forVisible(locator, options);
+    await this.waits.forEnabled(locator, options);
+    await locator.click({ timeout: this.timeout(options) });
   }
 
-  async clear(locator: Locator): Promise<void> {
-    await locator.clear();
+  async clear(locator: Locator, options: WaitOptions = {}): Promise<void> {
+    await this.waits.forEditable(locator, options);
+    await locator.clear({ timeout: this.timeout(options) });
   }
 
-  async fill(locator: Locator, value: string): Promise<void> {
-    await locator.fill(value);
+  async fill(locator: Locator, value: string, options: WaitOptions = {}): Promise<void> {
+    await this.waits.forEditable(locator, options);
+    await locator.fill(value, { timeout: this.timeout(options) });
   }
 
-  async clearAndFill(locator: Locator, value: string): Promise<void> {
-    await locator.clear();
-    await locator.fill(value);
+  async clearAndFill(locator: Locator, value: string, options: WaitOptions = {}): Promise<void> {
+    await this.waits.forEditable(locator, options);
+    await locator.clear({ timeout: this.timeout(options) });
+    await locator.fill(value, { timeout: this.timeout(options) });
   }
 
   async text(locator: Locator): Promise<string> {
@@ -36,19 +50,31 @@ export class UiActions {
     return locator.isEnabled();
   }
 
-  async selectByText(locator: Locator, text: string): Promise<void> {
-    await locator.selectOption({ label: text });
+  async selectByText(locator: Locator, text: string, options: WaitOptions = {}): Promise<void> {
+    await this.waits.forEnabled(locator, options);
+    await locator.selectOption({ label: text }, { timeout: this.timeout(options) });
   }
 
-  async hover(locator: Locator): Promise<void> {
-    await locator.hover();
+  async selectByValue(locator: Locator, value: string, options: WaitOptions = {}): Promise<void> {
+    await this.waits.forEnabled(locator, options);
+    await locator.selectOption({ value }, { timeout: this.timeout(options) });
   }
 
-  async scrollIntoView(locator: Locator): Promise<void> {
-    await locator.scrollIntoViewIfNeeded();
+  async hover(locator: Locator, options: WaitOptions = {}): Promise<void> {
+    await this.waits.forVisible(locator, options);
+    await locator.hover({ timeout: this.timeout(options) });
   }
 
-  async pressEnter(locator: Locator): Promise<void> {
-    await locator.press('Enter');
+  async scrollIntoView(locator: Locator, options: WaitOptions = {}): Promise<void> {
+    await locator.scrollIntoViewIfNeeded({ timeout: this.timeout(options) });
+  }
+
+  async pressEnter(locator: Locator, options: WaitOptions = {}): Promise<void> {
+    await this.waits.forEnabled(locator, options);
+    await locator.press('Enter', { timeout: this.timeout(options) });
+  }
+
+  private timeout(options: WaitOptions): number {
+    return options.timeoutMs ?? this.waitSettings.timeoutMs ?? DEFAULT_UI_TIMEOUT_MS;
   }
 }

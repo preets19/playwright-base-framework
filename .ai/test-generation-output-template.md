@@ -39,6 +39,7 @@ Update:
 Reasoning:
 
 - Explain which screens, panels, or stable UI areas are involved and whether existing page objects cover them.
+- Explain each page/component readiness signal and whether it needs to override `waitUntilReady()`.
 
 ### Test Data
 
@@ -75,6 +76,7 @@ Update:
 Reasoning:
 
 - Explain the business journey represented by the recorded steps and whether it belongs in a workflow.
+- Explain where the workflow should call page/component `waitUntilReady()` after navigation or state transitions.
 
 ### Tests
 
@@ -115,6 +117,20 @@ Reasoning:
 - Explain what outcome proves the scenario worked.
 
 Missing context:
+
+- None.
+
+## Readiness And Waiting
+
+Page readiness methods:
+
+- None identified.
+
+Workflow transition waits:
+
+- None identified.
+
+Fallback waits or risks:
 
 - None.
 

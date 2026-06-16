@@ -89,12 +89,16 @@ Page objects should:
 - Provide readable methods for page-level actions.
 - Provide assertion helpers or state methods when useful.
 - Extend or follow the framework `BasePage` pattern when applicable.
+- Provide or override `waitUntilReady()` when the page, modal, panel, or wizard step has asynchronous content or a stable readiness signal.
+- Use shared framework waits/actions such as `this.waits.forVisible(...)`, `this.waits.forHidden(...)`, `this.waits.forEditable(...)`, and `this.actions.click(...)` instead of fixed sleeps.
+- Wait for meaningful UI readiness signals such as headings, editable fields, loaded result collections, hidden spinners, enabled buttons, route changes, or confirmation messages.
 
 Page objects should not:
 
 - Contain test assertions that belong in the spec unless the local pattern explicitly allows assertion helpers.
 - Own multi-page business journeys.
 - Hard-code test-specific data when data belongs in models or test-data files.
+- Use `page.waitForTimeout()` for normal readiness. If no observable readiness signal exists, call out the risk and keep any fallback wait isolated and justified.
 
 ## Workflows
 
@@ -104,6 +108,8 @@ Workflows should:
 - Represent business actions that span multiple page interactions.
 - Return the page object or result object that the test should assert against.
 - Accept typed model or test data inputs when the journey depends on data.
+- Call page/component `waitUntilReady()` after navigation, route changes, search/filter actions, modal or drawer opens, checkout/wizard step changes, add-to-cart operations, form submissions, and other actions that change visible application state.
+- Keep state-transition waits in workflows or page methods so specs remain concise and business-focused.
 
 Workflows should not:
 
@@ -161,6 +167,19 @@ Choose assertions based on the intent of the recorded flow:
 - Error scenarios should assert the expected error state.
 
 If recorder output does not include assertions, infer reasonable assertions from the final page or state and call out the assumption.
+
+## Readiness And Waiting
+
+Playwright auto-waits for actionability on the specific locator being clicked, filled, or selected, but it does not know when an application screen is business-ready.
+
+Generated automation should use framework readiness patterns:
+
+- Use `BasePage.waitUntilReady()` as the default page readiness hook.
+- Override `waitUntilReady()` in app page objects when the page has dynamic content or known readiness signals.
+- Use shared waits/actions instead of raw `expect(locator)` waits when a framework helper already exists.
+- Prefer observable state over time delays: visible heading, hidden loading indicator, enabled submit button, loaded result count, URL/path change, updated cart count, or confirmation text.
+- Use network waits only when the app repo already follows that convention or when UI signals are insufficient and the endpoint is stable.
+- Keep readiness logic out of specs unless there is no suitable page/workflow abstraction yet.
 
 ## Required Output
 

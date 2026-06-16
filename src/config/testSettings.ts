@@ -20,6 +20,11 @@ export interface ApiSettings {
   timeoutMs: number;
 }
 
+export interface UiWaitSettings {
+  timeoutMs?: number;
+  pollIntervalMs?: number;
+}
+
 export interface DatabaseSettings {
   connectionString: string;
 }
@@ -28,5 +33,6 @@ export interface TestSettings {
   browser: BrowserSettings;
   application: ApplicationSettings;
   api: ApiSettings;
+  ui?: UiWaitSettings;
   database: DatabaseSettings;
 }
