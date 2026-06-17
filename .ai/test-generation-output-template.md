@@ -106,6 +106,20 @@ Reasoning:
 
 - Explain which recorded details are meaningful and which are implementation noise.
 
+## Interaction Catalog Mapping
+
+Use framework helpers:
+
+- None identified.
+
+App-specific interactions:
+
+- None identified.
+
+Framework enhancement proposals:
+
+- None.
+
 ## Assertions
 
 Recommended assertions:

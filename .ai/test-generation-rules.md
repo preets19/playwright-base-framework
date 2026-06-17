@@ -47,11 +47,15 @@ Check for both full and partial matches.
 
 If an existing workflow, page, model, test-data file, or test partially maps to the requested scenario, prefer reuse, composition, or a focused update when that keeps ownership clear and avoids mixing unrelated behavior.
 
+In template repos, artifacts named `sample*` are reference examples. Use them to understand framework style and structure. When real app artifacts exist, prefer those real artifacts for reuse and extension before copying or modifying sample artifacts.
+
 Clearly explain why each new artifact is needed instead of reusing or extending an existing one.
 
 Recorder output is an input signal, not the final implementation style.
 
 The generated test should be concise and written at the user-intent level. Move low-level interactions into page objects and multi-step user journeys into workflows.
+
+Do not automate every recorded action by default. Preserve interactions that prove the stated behavior, and shorten setup steps when a stable direct route or existing workflow is more reliable.
 
 Discard or generalize recorder details that are not meaningful to the test, such as:
 
@@ -91,6 +95,7 @@ Page objects should:
 - Extend or follow the framework `BasePage` pattern when applicable.
 - Provide or override `waitUntilReady()` when the page, modal, panel, or wizard step has asynchronous content or a stable readiness signal.
 - Use shared framework waits/actions such as `this.waits.forVisible(...)`, `this.waits.forHidden(...)`, `this.waits.forEditable(...)`, and `this.actions.click(...)` instead of fixed sleeps.
+- Map reusable interactions to `docs/INTERACTION-CATALOG.md` before writing raw Playwright calls.
 - Wait for meaningful UI readiness signals such as headings, editable fields, loaded result collections, hidden spinners, enabled buttons, route changes, or confirmation messages.
 
 Page objects should not:
@@ -99,6 +104,7 @@ Page objects should not:
 - Own multi-page business journeys.
 - Hard-code test-specific data when data belongs in models or test-data files.
 - Use `page.waitForTimeout()` for normal readiness. If no observable readiness signal exists, call out the risk and keep any fallback wait isolated and justified.
+- Reimplement generic interactions already covered by the framework interaction catalog.
 
 ## Workflows
 
@@ -180,6 +186,27 @@ Generated automation should use framework readiness patterns:
 - Prefer observable state over time delays: visible heading, hidden loading indicator, enabled submit button, loaded result count, URL/path change, updated cart count, or confirmation text.
 - Use network waits only when the app repo already follows that convention or when UI signals are insufficient and the endpoint is stable.
 - Keep readiness logic out of specs unless there is no suitable page/workflow abstraction yet.
+
+## Interaction Catalog
+
+Use `docs/INTERACTION-CATALOG.md` as the vocabulary for reusable UI interactions.
+
+Generated page objects should prefer helpers such as:
+
+- `actions.click`, `actions.doubleClick`, `actions.rightClick`
+- `actions.fill`, `actions.fillTextArea`, `actions.clearAndFill`
+- `actions.selectByText`, `actions.selectByValue`, `actions.selectMultipleByText`, `actions.selectMultipleByValue`
+- `actions.check`, `actions.uncheck`, `actions.selectRadio`, `actions.selectComboboxOption`, `actions.selectMultiChoiceOption`
+- `actions.uploadFile`
+- `actions.press`, `actions.pressEnter`, `actions.typeSequentially`
+- `actions.clickMenuItem`, `actions.clickTab`, `actions.expandAccordion`, `actions.closeModal`, `actions.dismissToast`
+- `actions.clickTableRowByText`, `actions.paginateNext`
+- `waits.forVisible`, `waits.forHidden`, `waits.forEditable`, `waits.forCountAtLeast`, and `waits.until`
+- `waits.forResults`, `waits.forModalVisible`, `waits.forModalHidden`, `waits.forToastVisible`, and `waits.forToastHidden`
+
+If recorder output opens a menu/dropdown/popover and then clicks an item, use a page/component method backed by `actions.clickMenuItem(...)` when the navigation itself is under test. If the menu navigation is only setup, prefer direct navigation to the workflow start page when the route is stable and existing conventions allow it.
+
+If a needed reusable interaction is missing from the catalog, implement the behavior in the app-owned page object first and include a framework enhancement proposal instead of editing the framework from a generated test task.
 
 ## Required Output
 

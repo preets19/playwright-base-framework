@@ -58,6 +58,26 @@ export class Waits {
       .toBeGreaterThanOrEqual(count);
   }
 
+  async forResults(locator: Locator, minimumCount = 1, options: WaitOptions = {}): Promise<void> {
+    await this.forCountAtLeast(locator, minimumCount, options);
+  }
+
+  async forModalVisible(locator: Locator, options: WaitOptions = {}): Promise<void> {
+    await this.forVisible(locator, options);
+  }
+
+  async forModalHidden(locator: Locator, options: WaitOptions = {}): Promise<void> {
+    await this.forHidden(locator, options);
+  }
+
+  async forToastVisible(locator: Locator, options: WaitOptions = {}): Promise<void> {
+    await this.forVisible(locator, options);
+  }
+
+  async forToastHidden(locator: Locator, options: WaitOptions = {}): Promise<void> {
+    await this.forHidden(locator, options);
+  }
+
   async forUrlContains(value: string | RegExp, options: WaitOptions = {}): Promise<void> {
     await expect(this.page, options.description).toHaveURL(value instanceof RegExp ? value : new RegExp(value), {
       timeout: this.timeout(options)
