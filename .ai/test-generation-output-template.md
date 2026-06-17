@@ -106,6 +106,24 @@ Reasoning:
 
 - Explain which recorded details are meaningful and which are implementation noise.
 
+## Naming And Contracts
+
+Naming decisions:
+
+- None identified.
+
+Method and return-shape contracts:
+
+- None identified.
+
+Assertion inputs:
+
+- None identified.
+
+Reasoning:
+
+- Explain the approved artifact names, page/workflow method signatures, workflow return values, and assertion input types.
+
 ## Interaction Catalog Mapping
 
 Use framework helpers:

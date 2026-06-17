@@ -66,6 +66,33 @@ Discard or generalize recorder details that are not meaningful to the test, such
 - Timing artifacts
 - Browser-generated noise
 
+## Naming Contract
+
+Use consistent, readable names that match the app repo convention.
+
+- Use `camelCase` for files, variables, methods, and locator fields.
+- Use `PascalCase` for classes, interfaces, and type aliases.
+- Page files/classes should end with `Page`, such as `checkoutPage.ts` and `CheckoutPage`.
+- Workflow files/classes should end with `Workflow`, such as `checkoutWorkflow.ts` and `CheckoutWorkflow`.
+- Model files/interfaces should end with `Model`, such as `checkoutModel.ts` and `CheckoutModel`.
+- Spec files should end with `.spec.ts`.
+- Locator fields should be `private readonly` and use semantic names plus full element-type suffixes, such as `loginButton`, `countrySelect`, `firstNameInput`, `successMessage`, `accountMenu`, or `profileMenuItem`.
+- Do not use abbreviated UI prefixes such as `btn`, `dd`, `ddl`, `txt`, `lbl`, or `msg`.
+- Use app or domain prefixes only when multiple systems or domains coexist in the same automation repo and the prefix prevents ambiguity.
+
+## Artifact Contracts
+
+Generated artifacts should agree on explicit contracts before code is written.
+
+- Framework mapping should decide whether each artifact is reused, updated, created, or reference-only.
+- Artifact design should define page method signatures, workflow method signatures, workflow return shape, assertion inputs, data ownership, and wait ownership.
+- Code generation should implement the approved names and contracts without renaming artifacts or changing return shapes.
+- Specs should assert against resolved strings, booleans, numbers, or typed result objects returned by workflows, not raw `Locator` objects, unless the local pattern explicitly uses page-owned assertion helpers.
+- If a spec assertion uses `toContain`, `toEqual`, or similar value matchers, the workflow/page method should return a resolved value of the expected type.
+- Page objects own locators and reusable page-level interactions.
+- Workflows own multi-page journeys and return only the state needed for spec assertions.
+- Tests own business-level assertions and should not duplicate page/workflow logic.
+
 ## Tests
 
 Tests should:
