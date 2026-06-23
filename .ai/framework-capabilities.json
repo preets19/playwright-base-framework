@@ -1,0 +1,1108 @@
+[
+  {
+    "name": "check",
+    "class": "UiActions",
+    "file": "src/actions/uiActions.ts",
+    "parameters": [
+      {
+        "name": "locator",
+        "type": "Locator"
+      },
+      {
+        "name": "options",
+        "type": "WaitOptions"
+      }
+    ],
+    "returnType": "Promise<void>",
+    "description": "",
+    "category": "interaction",
+    "categorySource": "inferred"
+  },
+  {
+    "name": "clear",
+    "class": "UiActions",
+    "file": "src/actions/uiActions.ts",
+    "parameters": [
+      {
+        "name": "locator",
+        "type": "Locator"
+      },
+      {
+        "name": "options",
+        "type": "WaitOptions"
+      }
+    ],
+    "returnType": "Promise<void>",
+    "description": "",
+    "category": "interaction",
+    "categorySource": "inferred"
+  },
+  {
+    "name": "clearAndFill",
+    "class": "UiActions",
+    "file": "src/actions/uiActions.ts",
+    "parameters": [
+      {
+        "name": "locator",
+        "type": "Locator"
+      },
+      {
+        "name": "value",
+        "type": "string"
+      },
+      {
+        "name": "options",
+        "type": "WaitOptions"
+      }
+    ],
+    "returnType": "Promise<void>",
+    "description": "",
+    "category": "interaction",
+    "categorySource": "inferred"
+  },
+  {
+    "name": "click",
+    "class": "UiActions",
+    "file": "src/actions/uiActions.ts",
+    "parameters": [
+      {
+        "name": "locator",
+        "type": "Locator"
+      },
+      {
+        "name": "options",
+        "type": "WaitOptions"
+      }
+    ],
+    "returnType": "Promise<void>",
+    "description": "",
+    "category": "interaction",
+    "categorySource": "inferred"
+  },
+  {
+    "name": "clickMenuItem",
+    "class": "UiActions",
+    "file": "src/actions/uiActions.ts",
+    "parameters": [
+      {
+        "name": "menuButton",
+        "type": "Locator"
+      },
+      {
+        "name": "menuItem",
+        "type": "Locator"
+      },
+      {
+        "name": "options",
+        "type": "MenuItemOptions"
+      }
+    ],
+    "returnType": "Promise<void>",
+    "description": "",
+    "category": "interaction",
+    "categorySource": "inferred"
+  },
+  {
+    "name": "clickTab",
+    "class": "UiActions",
+    "file": "src/actions/uiActions.ts",
+    "parameters": [
+      {
+        "name": "tab",
+        "type": "Locator"
+      },
+      {
+        "name": "selectedPanel",
+        "type": "Locator"
+      },
+      {
+        "name": "options",
+        "type": "WaitOptions"
+      }
+    ],
+    "returnType": "Promise<void>",
+    "description": "",
+    "category": "interaction",
+    "categorySource": "inferred"
+  },
+  {
+    "name": "clickTableRowByText",
+    "class": "UiActions",
+    "file": "src/actions/uiActions.ts",
+    "parameters": [
+      {
+        "name": "rows",
+        "type": "Locator"
+      },
+      {
+        "name": "text",
+        "type": "string | RegExp"
+      },
+      {
+        "name": "options",
+        "type": "WaitOptions"
+      }
+    ],
+    "returnType": "Promise<void>",
+    "description": "",
+    "category": "interaction",
+    "categorySource": "inferred"
+  },
+  {
+    "name": "closeModal",
+    "class": "UiActions",
+    "file": "src/actions/uiActions.ts",
+    "parameters": [
+      {
+        "name": "closeButton",
+        "type": "Locator"
+      },
+      {
+        "name": "modal",
+        "type": "Locator"
+      },
+      {
+        "name": "options",
+        "type": "WaitOptions"
+      }
+    ],
+    "returnType": "Promise<void>",
+    "description": "",
+    "category": "interaction",
+    "categorySource": "inferred"
+  },
+  {
+    "name": "dismissToast",
+    "class": "UiActions",
+    "file": "src/actions/uiActions.ts",
+    "parameters": [
+      {
+        "name": "dismissButton",
+        "type": "Locator"
+      },
+      {
+        "name": "toast",
+        "type": "Locator"
+      },
+      {
+        "name": "options",
+        "type": "WaitOptions"
+      }
+    ],
+    "returnType": "Promise<void>",
+    "description": "",
+    "category": "interaction",
+    "categorySource": "inferred"
+  },
+  {
+    "name": "doubleClick",
+    "class": "UiActions",
+    "file": "src/actions/uiActions.ts",
+    "parameters": [
+      {
+        "name": "locator",
+        "type": "Locator"
+      },
+      {
+        "name": "options",
+        "type": "WaitOptions"
+      }
+    ],
+    "returnType": "Promise<void>",
+    "description": "",
+    "category": "interaction",
+    "categorySource": "inferred"
+  },
+  {
+    "name": "expandAccordion",
+    "class": "UiActions",
+    "file": "src/actions/uiActions.ts",
+    "parameters": [
+      {
+        "name": "header",
+        "type": "Locator"
+      },
+      {
+        "name": "panel",
+        "type": "Locator"
+      },
+      {
+        "name": "options",
+        "type": "WaitOptions"
+      }
+    ],
+    "returnType": "Promise<void>",
+    "description": "",
+    "category": "interaction",
+    "categorySource": "inferred"
+  },
+  {
+    "name": "fill",
+    "class": "UiActions",
+    "file": "src/actions/uiActions.ts",
+    "parameters": [
+      {
+        "name": "locator",
+        "type": "Locator"
+      },
+      {
+        "name": "value",
+        "type": "string"
+      },
+      {
+        "name": "options",
+        "type": "WaitOptions"
+      }
+    ],
+    "returnType": "Promise<void>",
+    "description": "",
+    "category": "interaction",
+    "categorySource": "inferred"
+  },
+  {
+    "name": "fillTextArea",
+    "class": "UiActions",
+    "file": "src/actions/uiActions.ts",
+    "parameters": [
+      {
+        "name": "locator",
+        "type": "Locator"
+      },
+      {
+        "name": "value",
+        "type": "string"
+      },
+      {
+        "name": "options",
+        "type": "WaitOptions"
+      }
+    ],
+    "returnType": "Promise<void>",
+    "description": "",
+    "category": "interaction",
+    "categorySource": "inferred"
+  },
+  {
+    "name": "goto",
+    "class": "UiActions",
+    "file": "src/actions/uiActions.ts",
+    "parameters": [
+      {
+        "name": "url",
+        "type": "string"
+      }
+    ],
+    "returnType": "Promise<void>",
+    "description": "",
+    "category": "interaction",
+    "categorySource": "inferred"
+  },
+  {
+    "name": "hover",
+    "class": "UiActions",
+    "file": "src/actions/uiActions.ts",
+    "parameters": [
+      {
+        "name": "locator",
+        "type": "Locator"
+      },
+      {
+        "name": "options",
+        "type": "WaitOptions"
+      }
+    ],
+    "returnType": "Promise<void>",
+    "description": "",
+    "category": "interaction",
+    "categorySource": "inferred"
+  },
+  {
+    "name": "isEnabled",
+    "class": "UiActions",
+    "file": "src/actions/uiActions.ts",
+    "parameters": [
+      {
+        "name": "locator",
+        "type": "Locator"
+      }
+    ],
+    "returnType": "Promise<boolean>",
+    "description": "",
+    "category": "interaction",
+    "categorySource": "inferred"
+  },
+  {
+    "name": "isVisible",
+    "class": "UiActions",
+    "file": "src/actions/uiActions.ts",
+    "parameters": [
+      {
+        "name": "locator",
+        "type": "Locator"
+      }
+    ],
+    "returnType": "Promise<boolean>",
+    "description": "",
+    "category": "interaction",
+    "categorySource": "inferred"
+  },
+  {
+    "name": "paginateNext",
+    "class": "UiActions",
+    "file": "src/actions/uiActions.ts",
+    "parameters": [
+      {
+        "name": "nextButton",
+        "type": "Locator"
+      },
+      {
+        "name": "results",
+        "type": "Locator"
+      },
+      {
+        "name": "options",
+        "type": "WaitOptions"
+      }
+    ],
+    "returnType": "Promise<void>",
+    "description": "",
+    "category": "interaction",
+    "categorySource": "inferred"
+  },
+  {
+    "name": "press",
+    "class": "UiActions",
+    "file": "src/actions/uiActions.ts",
+    "parameters": [
+      {
+        "name": "locator",
+        "type": "Locator"
+      },
+      {
+        "name": "key",
+        "type": "string"
+      },
+      {
+        "name": "options",
+        "type": "WaitOptions"
+      }
+    ],
+    "returnType": "Promise<void>",
+    "description": "",
+    "category": "interaction",
+    "categorySource": "inferred"
+  },
+  {
+    "name": "pressEnter",
+    "class": "UiActions",
+    "file": "src/actions/uiActions.ts",
+    "parameters": [
+      {
+        "name": "locator",
+        "type": "Locator"
+      },
+      {
+        "name": "options",
+        "type": "WaitOptions"
+      }
+    ],
+    "returnType": "Promise<void>",
+    "description": "",
+    "category": "interaction",
+    "categorySource": "inferred"
+  },
+  {
+    "name": "rightClick",
+    "class": "UiActions",
+    "file": "src/actions/uiActions.ts",
+    "parameters": [
+      {
+        "name": "locator",
+        "type": "Locator"
+      },
+      {
+        "name": "options",
+        "type": "WaitOptions"
+      }
+    ],
+    "returnType": "Promise<void>",
+    "description": "",
+    "category": "interaction",
+    "categorySource": "inferred"
+  },
+  {
+    "name": "scrollIntoView",
+    "class": "UiActions",
+    "file": "src/actions/uiActions.ts",
+    "parameters": [
+      {
+        "name": "locator",
+        "type": "Locator"
+      },
+      {
+        "name": "options",
+        "type": "WaitOptions"
+      }
+    ],
+    "returnType": "Promise<void>",
+    "description": "",
+    "category": "interaction",
+    "categorySource": "inferred"
+  },
+  {
+    "name": "selectByText",
+    "class": "UiActions",
+    "file": "src/actions/uiActions.ts",
+    "parameters": [
+      {
+        "name": "locator",
+        "type": "Locator"
+      },
+      {
+        "name": "text",
+        "type": "string"
+      },
+      {
+        "name": "options",
+        "type": "WaitOptions"
+      }
+    ],
+    "returnType": "Promise<void>",
+    "description": "",
+    "category": "interaction",
+    "categorySource": "inferred"
+  },
+  {
+    "name": "selectByValue",
+    "class": "UiActions",
+    "file": "src/actions/uiActions.ts",
+    "parameters": [
+      {
+        "name": "locator",
+        "type": "Locator"
+      },
+      {
+        "name": "value",
+        "type": "string"
+      },
+      {
+        "name": "options",
+        "type": "WaitOptions"
+      }
+    ],
+    "returnType": "Promise<void>",
+    "description": "",
+    "category": "interaction",
+    "categorySource": "inferred"
+  },
+  {
+    "name": "selectComboboxOption",
+    "class": "UiActions",
+    "file": "src/actions/uiActions.ts",
+    "parameters": [
+      {
+        "name": "combobox",
+        "type": "Locator"
+      },
+      {
+        "name": "option",
+        "type": "Locator"
+      },
+      {
+        "name": "options",
+        "type": "MenuItemOptions"
+      }
+    ],
+    "returnType": "Promise<void>",
+    "description": "",
+    "category": "interaction",
+    "categorySource": "inferred"
+  },
+  {
+    "name": "selectMultiChoiceOption",
+    "class": "UiActions",
+    "file": "src/actions/uiActions.ts",
+    "parameters": [
+      {
+        "name": "control",
+        "type": "Locator"
+      },
+      {
+        "name": "option",
+        "type": "Locator"
+      },
+      {
+        "name": "options",
+        "type": "MenuItemOptions"
+      }
+    ],
+    "returnType": "Promise<void>",
+    "description": "",
+    "category": "interaction",
+    "categorySource": "inferred"
+  },
+  {
+    "name": "selectMultipleByText",
+    "class": "UiActions",
+    "file": "src/actions/uiActions.ts",
+    "parameters": [
+      {
+        "name": "locator",
+        "type": "Locator"
+      },
+      {
+        "name": "labels",
+        "type": "string[]"
+      },
+      {
+        "name": "options",
+        "type": "WaitOptions"
+      }
+    ],
+    "returnType": "Promise<void>",
+    "description": "",
+    "category": "interaction",
+    "categorySource": "inferred"
+  },
+  {
+    "name": "selectMultipleByValue",
+    "class": "UiActions",
+    "file": "src/actions/uiActions.ts",
+    "parameters": [
+      {
+        "name": "locator",
+        "type": "Locator"
+      },
+      {
+        "name": "values",
+        "type": "string[]"
+      },
+      {
+        "name": "options",
+        "type": "WaitOptions"
+      }
+    ],
+    "returnType": "Promise<void>",
+    "description": "",
+    "category": "interaction",
+    "categorySource": "inferred"
+  },
+  {
+    "name": "selectRadio",
+    "class": "UiActions",
+    "file": "src/actions/uiActions.ts",
+    "parameters": [
+      {
+        "name": "locator",
+        "type": "Locator"
+      },
+      {
+        "name": "options",
+        "type": "WaitOptions"
+      }
+    ],
+    "returnType": "Promise<void>",
+    "description": "",
+    "category": "interaction",
+    "categorySource": "inferred"
+  },
+  {
+    "name": "text",
+    "class": "UiActions",
+    "file": "src/actions/uiActions.ts",
+    "parameters": [
+      {
+        "name": "locator",
+        "type": "Locator"
+      }
+    ],
+    "returnType": "Promise<string>",
+    "description": "",
+    "category": "interaction",
+    "categorySource": "inferred"
+  },
+  {
+    "name": "typeSequentially",
+    "class": "UiActions",
+    "file": "src/actions/uiActions.ts",
+    "parameters": [
+      {
+        "name": "locator",
+        "type": "Locator"
+      },
+      {
+        "name": "value",
+        "type": "string"
+      },
+      {
+        "name": "options",
+        "type": "WaitOptions"
+      }
+    ],
+    "returnType": "Promise<void>",
+    "description": "",
+    "category": "interaction",
+    "categorySource": "inferred"
+  },
+  {
+    "name": "uncheck",
+    "class": "UiActions",
+    "file": "src/actions/uiActions.ts",
+    "parameters": [
+      {
+        "name": "locator",
+        "type": "Locator"
+      },
+      {
+        "name": "options",
+        "type": "WaitOptions"
+      }
+    ],
+    "returnType": "Promise<void>",
+    "description": "",
+    "category": "interaction",
+    "categorySource": "inferred"
+  },
+  {
+    "name": "uploadFile",
+    "class": "UiActions",
+    "file": "src/actions/uiActions.ts",
+    "parameters": [
+      {
+        "name": "locator",
+        "type": "Locator"
+      },
+      {
+        "name": "filePath",
+        "type": "string | string[]"
+      },
+      {
+        "name": "options",
+        "type": "WaitOptions"
+      }
+    ],
+    "returnType": "Promise<void>",
+    "description": "",
+    "category": "interaction",
+    "categorySource": "inferred"
+  },
+  {
+    "name": "locator",
+    "class": "BasePage",
+    "file": "src/core/basePage.ts",
+    "parameters": [
+      {
+        "name": "selector",
+        "type": "string"
+      }
+    ],
+    "returnType": "",
+    "description": "",
+    "category": "core",
+    "categorySource": "inferred"
+  },
+  {
+    "name": "navigateTo",
+    "class": "BasePage",
+    "file": "src/core/basePage.ts",
+    "parameters": [
+      {
+        "name": "url",
+        "type": "string"
+      }
+    ],
+    "returnType": "Promise<void>",
+    "description": "",
+    "category": "core",
+    "categorySource": "inferred"
+  },
+  {
+    "name": "resolveLocator",
+    "class": "BasePage",
+    "file": "src/core/basePage.ts",
+    "parameters": [
+      {
+        "name": "candidates",
+        "type": "Array<() => Locator>"
+      }
+    ],
+    "returnType": "Promise<Locator>",
+    "description": "Returns the first candidate locator that resolves to exactly one visible element.\nA candidate matching zero or multiple elements is skipped, not auto-narrowed with\n.first() — an ambiguous match must fall through to the next candidate rather than\nsilently picking one of several matches.",
+    "category": "locatorResolution",
+    "categorySource": "explicit"
+  },
+  {
+    "name": "title",
+    "class": "BasePage",
+    "file": "src/core/basePage.ts",
+    "parameters": [],
+    "returnType": "Promise<string>",
+    "description": "",
+    "category": "core",
+    "categorySource": "inferred"
+  },
+  {
+    "name": "titleContains",
+    "class": "BasePage",
+    "file": "src/core/basePage.ts",
+    "parameters": [
+      {
+        "name": "expected",
+        "type": "string"
+      }
+    ],
+    "returnType": "Promise<boolean>",
+    "description": "",
+    "category": "core",
+    "categorySource": "inferred"
+  },
+  {
+    "name": "waitUntilReady",
+    "class": "BasePage",
+    "file": "src/core/basePage.ts",
+    "parameters": [],
+    "returnType": "Promise<void>",
+    "description": "",
+    "category": "core",
+    "categorySource": "inferred"
+  },
+  {
+    "name": "forAttached",
+    "class": "Waits",
+    "file": "src/core/waits.ts",
+    "parameters": [
+      {
+        "name": "locator",
+        "type": "Locator"
+      },
+      {
+        "name": "options",
+        "type": "WaitOptions"
+      }
+    ],
+    "returnType": "Promise<void>",
+    "description": "",
+    "category": "readiness",
+    "categorySource": "inferred"
+  },
+  {
+    "name": "forCount",
+    "class": "Waits",
+    "file": "src/core/waits.ts",
+    "parameters": [
+      {
+        "name": "locator",
+        "type": "Locator"
+      },
+      {
+        "name": "count",
+        "type": "number"
+      },
+      {
+        "name": "options",
+        "type": "WaitOptions"
+      }
+    ],
+    "returnType": "Promise<void>",
+    "description": "",
+    "category": "readiness",
+    "categorySource": "inferred"
+  },
+  {
+    "name": "forCountAtLeast",
+    "class": "Waits",
+    "file": "src/core/waits.ts",
+    "parameters": [
+      {
+        "name": "locator",
+        "type": "Locator"
+      },
+      {
+        "name": "count",
+        "type": "number"
+      },
+      {
+        "name": "options",
+        "type": "WaitOptions"
+      }
+    ],
+    "returnType": "Promise<void>",
+    "description": "",
+    "category": "readiness",
+    "categorySource": "inferred"
+  },
+  {
+    "name": "forEditable",
+    "class": "Waits",
+    "file": "src/core/waits.ts",
+    "parameters": [
+      {
+        "name": "locator",
+        "type": "Locator"
+      },
+      {
+        "name": "options",
+        "type": "WaitOptions"
+      }
+    ],
+    "returnType": "Promise<void>",
+    "description": "",
+    "category": "readiness",
+    "categorySource": "inferred"
+  },
+  {
+    "name": "forEnabled",
+    "class": "Waits",
+    "file": "src/core/waits.ts",
+    "parameters": [
+      {
+        "name": "locator",
+        "type": "Locator"
+      },
+      {
+        "name": "options",
+        "type": "WaitOptions"
+      }
+    ],
+    "returnType": "Promise<void>",
+    "description": "",
+    "category": "readiness",
+    "categorySource": "inferred"
+  },
+  {
+    "name": "forExactText",
+    "class": "Waits",
+    "file": "src/core/waits.ts",
+    "parameters": [
+      {
+        "name": "locator",
+        "type": "Locator"
+      },
+      {
+        "name": "value",
+        "type": "string | RegExp"
+      },
+      {
+        "name": "options",
+        "type": "WaitOptions"
+      }
+    ],
+    "returnType": "Promise<void>",
+    "description": "",
+    "category": "readiness",
+    "categorySource": "inferred"
+  },
+  {
+    "name": "forHidden",
+    "class": "Waits",
+    "file": "src/core/waits.ts",
+    "parameters": [
+      {
+        "name": "locator",
+        "type": "Locator"
+      },
+      {
+        "name": "options",
+        "type": "WaitOptions"
+      }
+    ],
+    "returnType": "Promise<void>",
+    "description": "",
+    "category": "readiness",
+    "categorySource": "inferred"
+  },
+  {
+    "name": "forModalHidden",
+    "class": "Waits",
+    "file": "src/core/waits.ts",
+    "parameters": [
+      {
+        "name": "locator",
+        "type": "Locator"
+      },
+      {
+        "name": "options",
+        "type": "WaitOptions"
+      }
+    ],
+    "returnType": "Promise<void>",
+    "description": "",
+    "category": "readiness",
+    "categorySource": "inferred"
+  },
+  {
+    "name": "forModalVisible",
+    "class": "Waits",
+    "file": "src/core/waits.ts",
+    "parameters": [
+      {
+        "name": "locator",
+        "type": "Locator"
+      },
+      {
+        "name": "options",
+        "type": "WaitOptions"
+      }
+    ],
+    "returnType": "Promise<void>",
+    "description": "",
+    "category": "readiness",
+    "categorySource": "inferred"
+  },
+  {
+    "name": "forPageReady",
+    "class": "Waits",
+    "file": "src/core/waits.ts",
+    "parameters": [
+      {
+        "name": "options",
+        "type": "WaitOptions"
+      }
+    ],
+    "returnType": "Promise<void>",
+    "description": "",
+    "category": "readiness",
+    "categorySource": "inferred"
+  },
+  {
+    "name": "forResults",
+    "class": "Waits",
+    "file": "src/core/waits.ts",
+    "parameters": [
+      {
+        "name": "locator",
+        "type": "Locator"
+      },
+      {
+        "name": "minimumCount",
+        "type": ""
+      },
+      {
+        "name": "options",
+        "type": "WaitOptions"
+      }
+    ],
+    "returnType": "Promise<void>",
+    "description": "",
+    "category": "readiness",
+    "categorySource": "inferred"
+  },
+  {
+    "name": "forText",
+    "class": "Waits",
+    "file": "src/core/waits.ts",
+    "parameters": [
+      {
+        "name": "locator",
+        "type": "Locator"
+      },
+      {
+        "name": "value",
+        "type": "string | RegExp"
+      },
+      {
+        "name": "options",
+        "type": "WaitOptions"
+      }
+    ],
+    "returnType": "Promise<void>",
+    "description": "",
+    "category": "readiness",
+    "categorySource": "inferred"
+  },
+  {
+    "name": "forToastHidden",
+    "class": "Waits",
+    "file": "src/core/waits.ts",
+    "parameters": [
+      {
+        "name": "locator",
+        "type": "Locator"
+      },
+      {
+        "name": "options",
+        "type": "WaitOptions"
+      }
+    ],
+    "returnType": "Promise<void>",
+    "description": "",
+    "category": "readiness",
+    "categorySource": "inferred"
+  },
+  {
+    "name": "forToastVisible",
+    "class": "Waits",
+    "file": "src/core/waits.ts",
+    "parameters": [
+      {
+        "name": "locator",
+        "type": "Locator"
+      },
+      {
+        "name": "options",
+        "type": "WaitOptions"
+      }
+    ],
+    "returnType": "Promise<void>",
+    "description": "",
+    "category": "readiness",
+    "categorySource": "inferred"
+  },
+  {
+    "name": "forUrlContains",
+    "class": "Waits",
+    "file": "src/core/waits.ts",
+    "parameters": [
+      {
+        "name": "value",
+        "type": "string | RegExp"
+      },
+      {
+        "name": "options",
+        "type": "WaitOptions"
+      }
+    ],
+    "returnType": "Promise<void>",
+    "description": "",
+    "category": "readiness",
+    "categorySource": "inferred"
+  },
+  {
+    "name": "forVisible",
+    "class": "Waits",
+    "file": "src/core/waits.ts",
+    "parameters": [
+      {
+        "name": "locator",
+        "type": "Locator"
+      },
+      {
+        "name": "options",
+        "type": "WaitOptions"
+      }
+    ],
+    "returnType": "Promise<void>",
+    "description": "",
+    "category": "readiness",
+    "categorySource": "inferred"
+  },
+  {
+    "name": "until",
+    "class": "Waits",
+    "file": "src/core/waits.ts",
+    "parameters": [
+      {
+        "name": "callback",
+        "type": "() => Promise<boolean> | boolean"
+      },
+      {
+        "name": "options",
+        "type": "WaitOptions"
+      }
+    ],
+    "returnType": "Promise<void>",
+    "description": "",
+    "category": "readiness",
+    "categorySource": "inferred"
+  }
+]
