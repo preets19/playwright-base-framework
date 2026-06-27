@@ -87,4 +87,31 @@ export class BasePage {
       return '<locator>';
     }
   }
+
+  /**
+   * Repeatedly attempts `resolve` (e.g. a `resolveLocator` call) until it succeeds, then force-clicks
+   * the result and stops itself. Built for unpredictable, app-specific interruptions (cookie banners,
+   * push-notification opt-ins, etc.) that can appear at any point during a test, including mid-wait --
+   * Playwright's own `addLocatorHandler` only fires before actions, never before passive `expect()`-based
+   * waits, so a continuous poll is the only way to catch one regardless of what the test is doing.
+   * `resolve` failing (nothing to dismiss yet) is the expected, common case and is silently ignored.
+   * Cleans up automatically on page close, but the returned stop function can be called earlier if needed.
+   *
+   * @category locatorResolution
+   */
+  pollAndDismiss(resolve: () => Promise<Locator>, options: { intervalMs?: number } = {}): () => void {
+    let interval: ReturnType<typeof setInterval>;
+    const stop = () => clearInterval(interval);
+
+    interval = setInterval(() => {
+      resolve()
+        .then((locator) => locator.click({ force: true, timeout: 500 }))
+        .then(stop)
+        .catch(() => {});
+    }, options.intervalMs ?? 250);
+
+    this.page.once('close', stop);
+
+    return stop;
+  }
 }

@@ -717,6 +717,25 @@
     "categorySource": "inferred"
   },
   {
+    "name": "pollAndDismiss",
+    "class": "BasePage",
+    "file": "src/core/basePage.ts",
+    "parameters": [
+      {
+        "name": "resolve",
+        "type": "() => Promise<Locator>"
+      },
+      {
+        "name": "options",
+        "type": "{ intervalMs?: number }"
+      }
+    ],
+    "returnType": "() => void",
+    "description": "Repeatedly attempts `resolve` (e.g. a `resolveLocator` call) until it succeeds, then force-clicks\nthe result and stops itself. Built for unpredictable, app-specific interruptions (cookie banners,\npush-notification opt-ins, etc.) that can appear at any point during a test, including mid-wait --\nPlaywright's own `addLocatorHandler` only fires before actions, never before passive `expect()`-based\nwaits, so a continuous poll is the only way to catch one regardless of what the test is doing.\n`resolve` failing (nothing to dismiss yet) is the expected, common case and is silently ignored.\nCleans up automatically on page close, but the returned stop function can be called earlier if needed.",
+    "category": "locatorResolution",
+    "categorySource": "explicit"
+  },
+  {
     "name": "resolveLocator",
     "class": "BasePage",
     "file": "src/core/basePage.ts",
