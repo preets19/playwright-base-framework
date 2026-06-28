@@ -21,6 +21,7 @@
   "files": [
     "dist",
     "src",
+    ".ai",
     "README.md",
     "package.json"
   ],
